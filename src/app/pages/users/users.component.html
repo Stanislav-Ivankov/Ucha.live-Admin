@@ -1,0 +1,14 @@
+<div style="display: flex; align-items: center; justify-content: center;">
+	<button (click)="onAddNew()" mat-button mat-raised-button class="Add-User-Button">Добави Потребител</button>
+</div>
+
+<app-inforce-table
+	[columns]="columns"
+	[dataSource]="users"
+	[hasPreviewIcon]="true"
+	[hasOpenIcon]="false"
+	[hasDeleteIcon]="true"
+	[onOpen]="onOpen.bind(this)"
+	[onEdit]="onEdit.bind(this)"
+	[onDelete]="onDelete.bind(this)">
+</app-inforce-table>

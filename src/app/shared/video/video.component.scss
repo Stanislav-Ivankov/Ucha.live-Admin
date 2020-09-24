@@ -1,0 +1,11 @@
+::ng-deep {
+    .video-js {
+        width: 100vw;
+        height: 80vh;
+    }
+
+    video-js button {
+      margin-top: 45vh;
+      margin-left: 45vw;
+    }
+}

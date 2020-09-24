@@ -1,0 +1,12 @@
+<div class="center">
+	<mat-form-field>
+		<mat-label>Прегледай камера</mat-label>
+		<mat-select class="form-control" [(ngModel)]="visibleCamera">
+			<mat-option class="mat-primary" [value]="item._id" *ngFor="let item of cameras">{{item.name}}</mat-option>
+		</mat-select>
+	</mat-form-field>
+</div>
+
+<app-video [visibleCamera]="visibleCamera"></app-video>
+
+<div *ngIf="loading" class="loader"></div>

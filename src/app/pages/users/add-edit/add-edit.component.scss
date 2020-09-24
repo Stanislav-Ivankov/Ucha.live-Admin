@@ -1,0 +1,14 @@
+.Center {
+	> * {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.Fit {
+	height: 475px;
+}
+
+button {
+    font-size: 16px;
+}

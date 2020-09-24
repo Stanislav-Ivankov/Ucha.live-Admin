@@ -1,0 +1,42 @@
+<table matSort mat-table [dataSource]="_dataSource">
+
+    <ng-container *ngIf="hasOpenIcon" matColumnDef="positionOpenIcon">
+        <th style="width: 100px; text-align: center;" class="header" mat-header-cell *matHeaderCellDef>Детайли</th>
+        <td style="text-align-last: center;" mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="onOpen(element)">
+                <mat-icon class="blue-icon">reorder</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <ng-container *ngIf="hasPreviewIcon" matColumnDef="positionEditIcon">
+        <th style="width: 100px; text-align: center;" class="header" mat-header-cell *matHeaderCellDef>Редактирай</th>
+        <td style="text-align-last: center;" mat-cell *matCellDef="let element">
+            <i class="material-icons styled-icon green-icon" (click)="onEdit(element)">edit</i>
+        </td>
+    </ng-container>
+
+    <ng-container *ngIf="hasDeleteIcon" matColumnDef="positionDeleteIcon">
+        <th style="width: 100px; text-align: center;" class="header" mat-header-cell *matHeaderCellDef>Изтрий</th>
+        <td style="text-align-last: center;" mat-cell *matCellDef="let element">
+            <i class="material-icons styled-icon red-icon" (click)="onDelete(element)">delete_forever</i>
+        </td>
+    </ng-container>
+
+    <ng-container *ngFor="let column of columns">
+        <ng-container *ngIf="!(column.hidden || column.iconColumn || column.isProjected)" matColumnDef="{{ column.elementAttribute }}">
+            <th class="header" mat-header-cell mat-sort-header *matHeaderCellDef>{{ column.label }}</th>
+            <td style="width: 200px; text-align: center;" mat-cell *matCellDef="let element">
+                <span *ngIf="!column.options" [innerHTML]="column.formatFn ? column.formatFn(accessNestedProperty(element, column.elementAttribute)) : accessNestedProperty(element, column.elementAttribute)"></span>
+                <select *ngIf="column.options">
+                    <option *ngFor="let data of accessNestedProperty(element, column.elementAttribute)" [value]="data" [innerHTML]>{{ data }}</option>
+                </select>
+            </td>
+        </ng-container>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="filter()"></tr>
+    <tr mat-row *matRowDef="let row; columns: filter();"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

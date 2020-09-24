@@ -1,0 +1,261 @@
+<form #form="ngForm" class="Fit Center" mat-dialog-content>
+
+	<mat-form-field>
+		<mat-label>Име на класът</mat-label>
+		<input required name="name" [(ngModel)]="data.item.name" #NAME="ngModel" matInput>
+		<mat-error *ngIf="(form.submitted && NAME.untouched) || NAME.errors">Въведете Име</mat-error>
+	</mat-form-field>
+
+	<br>
+
+    <div class="row text-center">
+		<mat-label>График понеделник</mat-label>
+		<div *ngFor="let hour of data.item.mon; let i = index" class="small-margin-bottom block">
+			<button class="Center" mat-button (click)="removeHour('mon', i)" mat-flat-button>Изтрии предмет {{i + 1}}</button>
+			<br />
+			<mat-form-field>
+				<mat-label>Камера</mat-label>
+				<mat-select class="form-control" [(ngModel)]="hour.camera" [name]="'camera' + i">
+					<mat-option class="mat-primary" [value]="camera._id" *ngFor="let camera of data.cameras" class="small-margin-bottom">{{camera.name}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Име на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.title" [name]="'hourname' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Описание на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.description" [name]="'description' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Начален час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.start" [name]="'start' + i" />
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Краен час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.end" [name]="'end' + i" />
+			</mat-form-field>
+		</div>
+		<button class="Center" mat-button (click)="addHour('mon')" mat-flat-button>Добави час</button>
+	</div>
+
+	<div class="row text-center">
+		<mat-label>График вторник</mat-label>
+		<div *ngFor="let hour of data.item.tue; let i = index" class="small-margin-bottom block">
+			<button class="Center" mat-button (click)="removeHour('tue', i)" mat-flat-button>Изтрии предмет {{i + 1}}</button>
+			<br />
+			<mat-form-field>
+				<mat-label>Камера</mat-label>
+				<mat-select class="form-control" [(ngModel)]="hour.camera" [name]="'camera' + i">
+					<mat-option class="mat-primary" [value]="camera._id" *ngFor="let camera of data.cameras" class="small-margin-bottom">{{camera.name}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Име на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.title" [name]="'hourname' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Описание на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.description" [name]="'description' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Начален час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.start" [name]="'start' + i" />
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Краен час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.end" [name]="'end' + i" />
+			</mat-form-field>
+		</div>
+		<button class="Center" mat-button (click)="addHour('tue')" mat-flat-button>Добави час</button>
+	</div>
+
+	<div class="row text-center">
+		<mat-label>График сряда</mat-label>
+		<div *ngFor="let hour of data.item.wed; let i = index" class="small-margin-bottom block">
+			<button class="Center" mat-button (click)="removeHour('wed', i)" mat-flat-button>Изтрии предмет {{i + 1}}</button>
+			<br />
+			<mat-form-field>
+				<mat-label>Камера</mat-label>
+				<mat-select class="form-control" [(ngModel)]="hour.camera" [name]="'camera' + i">
+					<mat-option class="mat-primary" [value]="camera._id" *ngFor="let camera of data.cameras" class="small-margin-bottom">{{camera.name}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Име на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.title" [name]="'hourname' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Описание на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.description" [name]="'description' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Начален час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.start" [name]="'start' + i" />
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Краен час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.end" [name]="'end' + i" />
+			</mat-form-field>
+		</div>
+		<button class="Center" mat-button (click)="addHour('wed')" mat-flat-button>Добави час</button>
+	</div>
+
+	<div class="row text-center">
+		<mat-label>График четвъртък</mat-label>
+		<div *ngFor="let hour of data.item.thu; index as i" class="small-margin-bottom block">
+			<button class="Center" mat-button (click)="removeHour('thu', i)" mat-flat-button>Изтрии предмет {{i + 1}}</button>
+			<br />
+			<mat-form-field>
+				<mat-label>Камера</mat-label>
+				<mat-select class="form-control" [(ngModel)]="hour.camera" [name]="'camera' + i">
+					<mat-option class="mat-primary" [value]="camera._id" *ngFor="let camera of data.cameras" class="small-margin-bottom">{{camera.name}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Име на предмет {{hour.title}}</mat-label>
+				<textarea matInput [(ngModel)]="hour.title" [name]="'hourname' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Описание на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.description" [name]="'description' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Начален час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.start" [name]="'start' + i" />
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Краен час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.end" [name]="'end' + i" />
+			</mat-form-field>
+		</div>
+		<button class="Center" mat-button (click)="addHour('thu')" mat-flat-button>Добави час</button>
+	</div>
+
+	<div class="row text-center">
+		<mat-label>График петък</mat-label>
+		<div *ngFor="let hour of data.item.fri; let i = index" class="small-margin-bottom block">
+			<button class="Center" mat-button (click)="removeHour('fri', i)" mat-flat-button>Изтрии предмет {{i + 1}}</button>
+			<br />
+			<mat-form-field>
+				<mat-label>Камера</mat-label>
+				<mat-select class="form-control" [(ngModel)]="hour.camera" [name]="'camera' + i">
+					<mat-option class="mat-primary" [value]="camera._id" *ngFor="let camera of data.cameras" class="small-margin-bottom">{{camera.name}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Име на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.title" [name]="'hourname' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Описание на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.description" [name]="'description' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Начален час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.start" [name]="'start' + i" />
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Краен час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.end" [name]="'end' + i" />
+			</mat-form-field>
+		</div>
+		<button class="Center" mat-button (click)="addHour('fri')" mat-flat-button>Добави час</button>
+	</div>
+	<div class="row text-center">
+		<mat-label>График събота</mat-label>
+		<div *ngFor="let hour of data.item.sat; let i = index" class="small-margin-bottom block">
+			<button class="Center" mat-button (click)="removeHour('sat', i)" mat-flat-button>Изтрии предмет {{i + 1}}</button>
+			<br />
+			<mat-form-field>
+				<mat-label>Камера</mat-label>
+				<mat-select class="form-control" [(ngModel)]="hour.camera" [name]="'camera' + i">
+					<mat-option class="mat-primary" [value]="camera._id" *ngFor="let camera of data.cameras" class="small-margin-bottom">{{camera.name}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Име на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.title" [name]="'hourname' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Описание на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.description" [name]="'description' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Начален час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.start" [name]="'start' + i" />
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Краен час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.end" [name]="'end' + i" />
+			</mat-form-field>
+		</div>
+		<button class="Center" mat-button (click)="addHour('sat')" mat-flat-button>Добави час</button>
+	</div>
+	<div class="row text-center">
+		<mat-label>График неделя</mat-label>
+		<div *ngFor="let hour of data.item.sun; let i = index" class="small-margin-bottom block">
+			<button class="Center" mat-button (click)="removeHour('sun', i)" mat-flat-button>Изтрии предмет {{i + 1}}</button>
+			<br />
+			<mat-form-field>
+				<mat-label>Камера</mat-label>
+				<mat-select class="form-control" [(ngModel)]="hour.camera" [name]="'camera' + i">
+					<mat-option class="mat-primary" [value]="camera._id" *ngFor="let camera of data.cameras" class="small-margin-bottom">{{camera.name}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Име на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.title" [name]="'hourname' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Описание на предмет</mat-label>
+				<textarea matInput [(ngModel)]="hour.description" [name]="'description' + i"></textarea>
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Начален час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.start" [name]="'start' + i" />
+			</mat-form-field>
+			<br />
+			<mat-form-field>
+				<mat-label>Краен час на предмет</mat-label>
+				<input type="time" matInput [(ngModel)]="hour.end" [name]="'end' + i" />
+			</mat-form-field>
+		</div>
+		<button class="Center" mat-button (click)="addHour('sun')" mat-flat-button>Добави час</button>
+	</div>
+
+	<br>
+
+	<div mat-dialog-actions>
+		<button (click)="onYesClick()" type="submit" [disabled]="!form.valid" mat-button mat-flat-button>Въведи</button>
+		<button (click)="onNoClick()" mat-button mat-flat-button>Затвори</button>
+	</div>
+
+</form>

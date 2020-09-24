@@ -1,0 +1,156 @@
+table {
+    width: 100%;
+  }
+  
+  td {
+    color: #0747A6;
+    padding: 0% 0.5%;
+  
+  }
+  
+  .header {
+    background-color: #083982;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+
+  .mat-elevation-z8 {
+    margin: 2%;
+    margin-top: 0%;
+  
+  }
+
+  .container {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+  
+  }
+  
+  .icons-container {
+    display: inline-block;
+    padding-top: 5%;
+  }
+  
+  .add-user {
+    display: inline-block;
+    padding-top: 5%;
+  }
+  
+  .form-row {
+    padding-left: 5%;
+  }
+  
+  .material-icons {
+    cursor: pointer;
+  }
+  
+  .mat-paginator {
+    display: block;
+    margin-bottom: 10%;
+  }
+  
+  .btn {
+    color: #e8f0fd;
+    background-image: linear-gradient(#2D6AC6, #194EA0);
+    border: 1px solid #A0C6FF;
+    border-radius: 5%;
+    width: 7%;
+    margin: 3% 0%;
+    text-align: center;
+  }
+  
+  /* Doesn't work
+   .mat-sort-header {
+    color: green;
+  } */
+  
+  ::ng-deep .mat-sort-header-container:not(.mat-sort-header-sorted) .mat-sort-header-arrow {
+    opacity: 0.54 !important;
+    transform: translateY(0px) !important;
+    color: white;
+  }
+  
+  ::ng-deep .mat-sort-header-container .mat-sort-header-arrow {
+    color: white;
+  }
+  
+  ::ng-deep .mat-sort-header-arrow {
+    color: #fff;
+  }
+  
+  .pop-up-box {
+    overflow-y: auto;
+    max-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background: white;
+    color: #007bff;
+    text-align: left;
+  }
+  
+  
+  .pop-up-box {
+    overflow-y: auto;
+    max-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background: white;
+    color: #007bff;
+    text-align: left;
+  }
+  
+  select {
+    width: -webkit-fill-available;
+  }
+  
+  td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    padding: 0 0.5%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  
+  .styled-icon {
+    border-radius: 25%;
+    font-size: 20px;
+  }
+  
+  .green-icon {
+    color:#35C29A;
+  }
+
+  .blue-icon {
+    color:#0747A6;
+  }
+  
+  .red-icon {
+    color: #FF1C1C;
+    border: 2px solid #FF1C1C;
+  }
+  
+  .small-margin-top {
+    margin-top: 10%;
+  }
+  
+  .delete-button {
+    width: 25%; 
+    background-image: linear-gradient(#2D6AC6, #0747A6);
+  }
+  
+  .cancel-button {
+    margin-left: 25%; 
+    width: 25%; 
+    background-image: linear-gradient(#FFFFFF ,#DBE2EC); 
+    color: #0747A6;
+  }
+
+  .mat-sort-header-container {
+    justify-content: center !important;
+  }
+
+thead > tr > th.mat-sort-header.mat-header-cell > div {
+  justify-content: center !important;
+}

@@ -1,0 +1,48 @@
+<form #form="ngForm" class="Fit Center" mat-dialog-content>
+
+	<mat-form-field>
+		<mat-label>Име</mat-label>
+		<input required name="name" [(ngModel)]="data.item.name" #NAME="ngModel" matInput>
+		<mat-error *ngIf="(form.submitted && NAME.untouched) || NAME.errors">Въведете Име</mat-error>
+	</mat-form-field>
+
+	<br>
+
+	<mat-form-field>
+		<mat-label>Фамилия</mat-label>
+		<input required name="surname" [(ngModel)]="data.item.surname" #SURNAME="ngModel" matInput>
+		<mat-error *ngIf="(form.submitted && SURNAME.untouched) || SURNAME.errors">Въведете Фамилия</mat-error>
+	</mat-form-field>
+
+	<br>
+
+	<mat-form-field>
+		<mat-label>Клас</mat-label>
+		<mat-select required name="group" [(ngModel)]="data.item.group" #GROUP="ngModel">
+			<mat-option class="mat-primary" *ngFor="let group of data.groups" [value]="group._id">{{ group.name }}</mat-option>
+		</mat-select>
+		<mat-error *ngIf="(form.submitted && GROUP.untouched) || GROUP.errors">Въведете Група</mat-error>
+	</mat-form-field>
+
+	<br>
+
+	<mat-form-field>
+		<mat-label>Потребителско Име</mat-label>
+		<input required name="username" [(ngModel)]="data.item.username" #USERNAME="ngModel" matInput>
+		<mat-error *ngIf="(form.submitted && USERNAME.untouched) || USERNAME.errors">Въведете Потребителско Име</mat-error>
+	</mat-form-field>
+
+	<br>
+
+	<mat-form-field>
+		<mat-label>Парола</mat-label>
+		<input required name="password" [(ngModel)]="data.item.password" #PASSWORD="ngModel" matInput>
+		<mat-error *ngIf="(form.submitted && PASSWORD.untouched) || PASSWORD.errors">Въведете Парола</mat-error>
+	</mat-form-field>
+
+	<div mat-dialog-actions>
+		<button (click)="onYesClick()" type="submit" [disabled]="!form.valid" mat-button mat-flat-button>Въведи</button>
+		<button (click)="onNoClick()" mat-button mat-flat-button>Затвори</button>
+	</div>
+
+</form>

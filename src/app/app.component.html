@@ -1,0 +1,20 @@
+<ng-container *ngIf="loggedIn">
+
+	<mat-toolbar>
+		<mat-toolbar-row>
+			<h1>Уча.live</h1>
+
+			<ng-container>
+				<a class="Links" mat-button mat-stroked-button routerLink="/users">Ученици</a>
+				<a class="Links" mat-button mat-stroked-button routerLink="/groups">Класове</a>
+				<a class="Links" mat-button mat-stroked-button routerLink="/camera-check">Преглед на камера</a>
+
+				<mat-icon style="cursor: pointer;" class="Logout-Button" (click)="logout()" aria-hidden="false" aria-label="Exit">exit_to_app</mat-icon>
+			</ng-container>
+
+		</mat-toolbar-row>
+	</mat-toolbar>
+
+</ng-container>
+
+<router-outlet></router-outlet>

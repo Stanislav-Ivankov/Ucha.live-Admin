@@ -1,0 +1,14 @@
+<div style="display: flex; align-items: center; justify-content: center;">
+	<button (click)="onAddNew()" mat-button mat-raised-button class="Add-User-Button">Добави Клас</button>
+</div>
+
+<app-inforce-table
+	[columns]="columns"
+	[dataSource]="groups"
+	[hasPreviewIcon]="true"
+	[hasDeleteIcon]="true"
+	[onEdit]="onEdit.bind(this)"
+	[onDelete]="onDelete.bind(this)">
+</app-inforce-table>
+
+<div *ngIf="loading" class="loader"></div>

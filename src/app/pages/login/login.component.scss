@@ -1,0 +1,24 @@
+.Center {
+	> * {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.Login-Title {
+	margin: 150px 0px 12.5px 0px;
+	text-align: center;
+	font-size: 36px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Login-Sub-Title {
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 50px;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+	font-size: 16px;
+}

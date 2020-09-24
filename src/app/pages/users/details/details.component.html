@@ -1,0 +1,13 @@
+<ng-container *ngIf="details">
+	<div style="text-align: center; font-size: 24px; font-family:'Times New Roman', Times, serif">{{ 'Допълнителна Информация За Група ' + details.name }}</div>
+	<hr>
+
+	<ng-container *ngFor="let schedule of details.schedule">
+
+		<p style="text-align: center;">{{ 'Предмет: ' + schedule.title }}</p>
+		<p style="text-align: center;">{{ 'Тема: ' + schedule.description }}</p>
+		<hr style="width: 70%;">
+
+	</ng-container>
+
+</ng-container>

@@ -1,0 +1,24 @@
+html, body {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+    background: url('./assets/login.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+button.right {
+    float: right;
+    color: green;
+    font-size: 24px;
+}
+
+.mat-sort-header-container {
+    justify-content: center!important;
+}

@@ -1,0 +1,27 @@
+<p class="Login-Title">{{ title }}</p>
+<p class="Login-Sub-Title">Администраторски Панел</p>
+
+<form (ngSubmit)="login(form)" #form="ngForm" class="Center">
+    <mat-form-field>
+        <mat-label>Потребителско Име</mat-label>
+		<input required name="username" [(ngModel)]="username" #USERNAME="ngModel" matInput>
+		<mat-error *ngIf="(form.submitted && USERNAME.untouched) || USERNAME.errors">Въведете Потребителско Име</mat-error>
+    </mat-form-field>
+
+	<br/>
+
+	<mat-form-field>
+        <mat-label>Парола</mat-label>
+		<input required name="password" [(ngModel)]="password" #PASSWORD="ngModel" type="password" matInput>
+		<mat-error *ngIf="(form.submitted && PASSWORD.untouched) || PASSWORD.invalid">Въведете Парола</mat-error>
+    </mat-form-field>
+
+	<br>
+
+	<div>
+		<button type="submit" [disabled]="((USERNAME.touched && USERNAME.invalid) || (PASSWORD.touched && PASSWORD.invalid)) ||
+							(USERNAME.errors || PASSWORD.errors) && form.submitted"
+							mat-button mat-flat-button>Вход</button>
+	</div>
+
+</form>

@@ -1,0 +1,13 @@
+.Row {
+	display: flex;
+	flex-wrap: wrap;
+
+	.Column-Left, .Column-Right {
+		margin-bottom: 300px;
+		padding: 0px 12.5px 0px 0px;
+	}
+}
+
+.Add-User-Button {
+	margin: 16px 0px;
+}
